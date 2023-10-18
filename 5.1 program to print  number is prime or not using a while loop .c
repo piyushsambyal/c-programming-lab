@@ -1,17 +1,17 @@
 #include <stdio.h>
 int main()
 {
-    int n,c,max=-999999999;
-    printf("Enter number of elements:");
-    scanf("\n%d", &n);
+    int n,i=2;
+    int Prime=1;
+    printf("Enter number:");
+    scanf("\n%d",&n);
+    while(i<n/2 && Prime)
+    {
+        if (n%i==0) Prime=0;
+        i++;
+    }
+    if (Prime) printf("%d is Prime\n", n);
+    else printf("%d is not Prime\n", n);
     
-    for (int i=1; i<=n; i++)
-  {
-        printf("Enter element %d: ", i);
-        scanf("\n%d", &c);
-        if (c>max) max=c;
-  }
-    printf("Max number: %d\n", max);
-
     return 0;
 }
