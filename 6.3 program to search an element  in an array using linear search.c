@@ -1,31 +1,32 @@
 #include <stdio.h>
-int main()
+void main()
 {
-    int arr[1000];
-    int lim;
-    printf("Enter the limit of array");
-    scanf("%d", &lim);
-    for(int i=0; i<lim; i++)
+    int arr[]={1,2,3,4,5};
+    int len=sizeof(arr)/sizeof(int);
+    printf("Array:");
+    for (int i=0; i<len; i++)
     {
-        printf("Enter the elements");
-        scanf("%d",&arr[i]);
+        printf("%d ", arr[i]);
     }
-    int search,found=0;
-    printf("Enter the element to search");
-    scanf("%d",&search);
-
-    for(int i=0;i<10;i++)
-{
-    if(arr[i]==search)
-  {
-    printf("Element found at the index %d",i);
-    found=1;
-    break;
- }
-}
-  if(found==0)
-  printf("\n element not found");
-  else
-  printf("\n element founded");
-  return 0;
+    printf("\n");  
+    int idx = -1;
+    int val;
+    printf("Enter value to search:");
+    scanf("%d", &val);
+    for (int i=0;i<len;i++)
+    {
+        if (arr[i] == val)
+        {
+            idx = i;
+            break;
+        }
+    }
+    if(idx != -1) 
+    {
+      printf("Value %d is located at index %d\n", val,idx);
+    }
+    else 
+    {
+      printf("Value %d is not located in the array\n",val);
+    }
 }
